@@ -5,7 +5,7 @@
  *    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
 */
 
-package com.mycompany;
+package com.sample.adapter;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -29,7 +29,7 @@ public class JavaAdapterResource {
 	/*
 	 * For more info on JAX-RS see https://jsr311.java.net/nonav/releases/1.1/index.html
 	 */
-		
+
 	//Define logger (Standard java.util.Logger)
 	static Logger logger = Logger.getLogger(JavaAdapterResource.class.getName());
 
@@ -44,23 +44,24 @@ public class JavaAdapterResource {
 
 		return "<html><title>Hello from the Java REST adapter</title><body>Hello from the Java REST adapter</body></html>";
 	}
-		
+
 	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/{username}" */
+
 	@GET
 	@Path("/{username}")
 	public String helloUser(@PathParam("username") String name){
 		return "Hello " + name;
 	}
-	
+
 	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/helloUserQuery?name=value" */
 	@GET
 	@Path("/helloUserQuery")
 	public String helloUserQuery(@QueryParam("username") String name){
 		return "Hello " + name;
 	}
-	
 
-	
+
+
 	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/{first}/{middle}/{last}?age=value" */
 	@POST
 	@Path("/{first}/{middle}/{last}")
@@ -71,7 +72,7 @@ public class JavaAdapterResource {
 				"Height: " + height + "\n" +
 				"Date: " + date;
 	}
-	
+
 	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/newUsers" */
 	@PUT
 	@Path("/newUsers")
@@ -86,10 +87,10 @@ public class JavaAdapterResource {
 			}
 			return "Hello" + usersTemp;
 		}
-		
+
 		return "Hello";
 	}
-	
 
-		
+
+
 }
