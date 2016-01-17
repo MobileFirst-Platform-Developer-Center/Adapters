@@ -13,5 +13,5 @@
 	<displayName>JavaAdapter</displayName>
 	<description>JavaAdapter</description>
 
-	<JAXRSApplicationClass>com.mycompany.JavaAdapterApplication</JAXRSApplicationClass>
+	<JAXRSApplicationClass>com.sample.adapter.JavaAdapterApplication</JAXRSApplicationClass>
 </mfp:adapter>
