@@ -7,21 +7,13 @@
 
 package com.sample.adapter;
 
+import org.apache.wink.json4j.JSONException;
+import org.apache.wink.json4j.JSONObject;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.logging.Logger;
-import java.io.IOException;
-
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.HeaderParam;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Response;
 
 
 @Path("/users")
@@ -60,18 +52,23 @@ public class JavaAdapterResource {
 		return "Hello " + name;
 	}
 
-
-
 	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/{first}/{middle}/{last}?age=value" */
 	@POST
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{first}/{middle}/{last}")
-	public String enterInfo(@PathParam("first") String first, @PathParam("middle") String middle, @PathParam("last") String last,
-			@QueryParam("age") int age, @FormParam("height") String height, @HeaderParam("Date") String date){
-		return first +" "+ middle + " " + last + "\n" +
-				"Age: " + age + "\n" +
-				"Height: " + height + "\n" +
-				"Date: " + date;
+	public JSONObject enterInfo(@PathParam("first") String first, @PathParam("middle") String middle, @PathParam("last") String last,
+							@QueryParam("age") int age, @FormParam("height") String height, @HeaderParam("Date") String date) throws JSONException {
+		JSONObject results = new JSONObject();
+		results.put("first",first);
+		results.put("middle",middle);
+		results.put("last",last);
+		results.put("age",age);
+		results.put("height",height);
+		results.put("Date",date);
+		return results;
 	}
+
+
 
 	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/newUsers" */
 	@PUT
