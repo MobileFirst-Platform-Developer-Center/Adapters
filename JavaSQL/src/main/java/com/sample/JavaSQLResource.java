@@ -47,37 +47,37 @@ import com.worklight.adapters.rest.api.WLServerAPIProvider;
 @Path("/")
 public class JavaSQLResource {
 	/*
-	 * For more info on JAX-RS see https://jsr311.java.net/nonav/releases/1.1/index.html
+	 * For more info on JAX-RS see https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs/index.html
 	 */
-	
+
 	//Define logger (Standard java.util.Logger)
     static Logger logger = Logger.getLogger(JavaSQLResource.class.getName());
 
     //Define the server api to be able to perform server operations
     WLServerAPI api = WLServerAPIProvider.getWLServerAPI();
-    
+
     static DataSource ds = null;
     static Context ctx = null;
 
-    
+
     public static void init() throws NamingException {
     	ctx = new InitialContext();
-    	
+
     	//The JDBC configuration is inside the server.xml
     	//Liberty will handle connection pooling for us.
         ds = (DataSource)ctx.lookup("jdbc/mobilefirst_training");
     }
 
 	@POST
-	public Response createUser(@FormParam("userId") String userId, 
-								@FormParam("firstName") String firstName, 
-								@FormParam("lastName") String lastName, 
-								@FormParam("password") String password) 
+	public Response createUser(@FormParam("userId") String userId,
+								@FormParam("firstName") String firstName,
+								@FormParam("lastName") String lastName,
+								@FormParam("password") String password)
 										throws SQLException{
-		
+
 		Connection con = ds.getConnection();
 		PreparedStatement insertUser = con.prepareStatement("INSERT INTO users (userId, firstName, lastName, password) VALUES (?,?,?,?)");
-		
+
 		try{
 			insertUser.setString(1, userId);
 			insertUser.setString(2, firstName);
@@ -97,9 +97,9 @@ public class JavaSQLResource {
 			con.close();
 		}
 
-		
+
 	}
-	
+
 	@GET
 	@Produces("application/json")
 	@Path("/{userId}")
@@ -112,7 +112,7 @@ public class JavaSQLResource {
 
 			getUser.setString(1, userId);
 			ResultSet data = getUser.executeQuery();
-			
+
 			if(data.first()){
 				result.put("userId", data.getString("userId"));
 				result.put("firstName", data.getString("firstName"));
@@ -123,16 +123,16 @@ public class JavaSQLResource {
 			} else{
 				return Response.status(Status.NOT_FOUND).entity("User not found...").build();
 			}
-		
+
 		}
 		finally{
 			//Close resources in all cases
 			getUser.close();
 			con.close();
 		}
-		
+
 	}
-	
+
 	@GET
 	@Produces("application/json")
 	public Response getAllUsers() throws SQLException{
@@ -140,50 +140,50 @@ public class JavaSQLResource {
 		Connection con = ds.getConnection();
 		PreparedStatement getAllUsers = con.prepareStatement("SELECT * FROM users");
 		ResultSet data = getAllUsers.executeQuery();
-		
+
 		while(data.next()){
 			JSONObject item = new JSONObject();
 			item.put("userId", data.getString("userId"));
 			item.put("firstName", data.getString("firstName"));
 			item.put("lastName", data.getString("lastName"));
 			item.put("password", data.getString("password"));
-			
+
 			results.add(item);
 		}
-		
+
 		getAllUsers.close();
 		con.close();
-		
+
 		return Response.ok(results).build();
 	}
-	
+
 	@PUT
 	@Path("/{userId}")
-	public Response updateUser(@PathParam("userId") String userId, 
-								@FormParam("firstName") String firstName, 
-								@FormParam("lastName") String lastName, 
-								@FormParam("password") String password) 
+	public Response updateUser(@PathParam("userId") String userId,
+								@FormParam("firstName") String firstName,
+								@FormParam("lastName") String lastName,
+								@FormParam("password") String password)
 										throws SQLException{
 		Connection con = ds.getConnection();
 		PreparedStatement getUser = con.prepareStatement("SELECT * FROM users WHERE userId = ?");
-		
+
 		try{
 			getUser.setString(1, userId);
 			ResultSet data = getUser.executeQuery();
-			
+
 			if(data.first()){
 				PreparedStatement updateUser = con.prepareStatement("UPDATE users SET firstName = ?, lastName = ?, password = ? WHERE userId = ?");
-				
+
 				updateUser.setString(1, firstName);
 				updateUser.setString(2, lastName);
 				updateUser.setString(3, password);
 				updateUser.setString(4, userId);
-				
+
 				updateUser.executeUpdate();
 				updateUser.close();
 				return Response.ok().build();
 
-							
+
 			} else{
 				return Response.status(Status.NOT_FOUND).entity("User not found...").build();
 			}
@@ -193,26 +193,26 @@ public class JavaSQLResource {
 			getUser.close();
 			con.close();
 		}
-		
+
 	}
-	
+
 	@DELETE
 	@Path("/{userId}")
 	public Response deleteUser(@PathParam("userId") String userId) throws SQLException{
 		Connection con = ds.getConnection();
 		PreparedStatement getUser = con.prepareStatement("SELECT * FROM users WHERE userId = ?");
-		
+
 		try{
 			getUser.setString(1, userId);
 			ResultSet data = getUser.executeQuery();
-			
+
 			if(data.first()){
 				PreparedStatement deleteUser = con.prepareStatement("DELETE FROM users WHERE userId = ?");
 				deleteUser.setString(1, userId);
 				deleteUser.executeUpdate();
 				deleteUser.close();
 				return Response.ok().build();
-							
+
 			} else{
 				return Response.status(Status.NOT_FOUND).entity("User not found...").build();
 			}
@@ -222,7 +222,7 @@ public class JavaSQLResource {
 			getUser.close();
 			con.close();
 		}
-		
+
 	}
-	
+
 }
