@@ -25,8 +25,8 @@
 	<properties>
 		<!-- parameters for deploy mfpf adapter -->
 		<mfpfUrl>http://localhost:9080/mfpadmin</mfpfUrl>
-		<mfpfUser>demo</mfpfUser>
-		<mfpfPassword>demo</mfpfPassword>
+		<mfpfUser>admin</mfpfUser>
+		<mfpfPassword>admin</mfpfPassword>
 	</properties>
 
 	<build>
