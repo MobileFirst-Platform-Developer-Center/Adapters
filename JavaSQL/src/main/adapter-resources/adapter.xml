@@ -23,4 +23,8 @@ limitations under the License.
 	<description>JavaSQL</description>
 
 	<JAXRSApplicationClass>com.sample.JavaSQLApplication</JAXRSApplicationClass>
+
+	<property name="DB_url" displayName="Database URL" defaultValue="jdbc:mysql://127.0.0.1:3306/mobilefirst_training"  />
+	<property name="DB_username" displayName="Database username" defaultValue="mobilefirst"  />
+	<property name="DB_password" displayName="Database password" defaultValue="mobilefirst"  />
 </mfp:adapter>

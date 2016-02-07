@@ -23,10 +23,6 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.logging.Logger;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -35,13 +31,17 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.ibm.json.java.JSONArray;
 import com.ibm.json.java.JSONObject;
+import com.ibm.mfp.adapter.api.AdaptersAPI;
+import com.ibm.mfp.adapter.api.ConfigurationAPI;
 import com.worklight.adapters.rest.api.WLServerAPI;
 import com.worklight.adapters.rest.api.WLServerAPIProvider;
+import org.apache.commons.dbcp.BasicDataSource;
 
 
 @Path("/")
@@ -53,20 +53,49 @@ public class JavaSQLResource {
 	//Define logger (Standard java.util.Logger)
     static Logger logger = Logger.getLogger(JavaSQLResource.class.getName());
 
-    //Define the server api to be able to perform server operations
-    WLServerAPI api = WLServerAPIProvider.getWLServerAPI();
+	private static BasicDataSource ds = null;
+	private static String DB_url = null;
+	private static String DB_username = null;
+	private static String DB_password  = null;
 
-    static DataSource ds = null;
-    static Context ctx = null;
+	@Context
+	AdaptersAPI adaptersAPI;
 
+	@Context
+	ConfigurationAPI configurationAPI;
 
-    public static void init() throws NamingException {
-    	ctx = new InitialContext();
+	public Connection getSQLConnection(){
+		// Create a connection object to the database
+		Connection conn = null;
+		if(updatedProperties() || ds == null){
+			ds= new BasicDataSource();
+			ds.setDriverClassName("com.mysql.jdbc.Driver");
+			ds.setUrl(configurationAPI.getPropertyValue("DB_url"));
+			ds.setUsername(configurationAPI.getPropertyValue("DB_username"));
+			ds.setPassword(configurationAPI.getPropertyValue("DB_password"));
+		}
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
 
-    	//The JDBC configuration is inside the server.xml
-    	//Liberty will handle connection pooling for us.
-        ds = (DataSource)ctx.lookup("jdbc/mobilefirst_training");
-    }
+	private boolean updatedProperties() {
+		// Check if the properties were changed during runtime (in the console)
+		String last_url = DB_url;
+		String last_username = DB_username;
+		String last_password  = DB_password;
+
+		DB_url = configurationAPI.getPropertyValue("DB_url");
+		DB_username = configurationAPI.getPropertyValue("DB_username");
+		DB_password = configurationAPI.getPropertyValue("DB_password");
+
+		return !last_url.equals(DB_url) ||
+				!last_username.equals(DB_username) ||
+				!last_password.equals(last_password);
+	}
 
 	@POST
 	public Response createUser(@FormParam("userId") String userId,
@@ -75,7 +104,7 @@ public class JavaSQLResource {
 								@FormParam("password") String password)
 										throws SQLException{
 
-		Connection con = ds.getConnection();
+		Connection con = getSQLConnection();
 		PreparedStatement insertUser = con.prepareStatement("INSERT INTO users (userId, firstName, lastName, password) VALUES (?,?,?,?)");
 
 		try{
@@ -104,7 +133,7 @@ public class JavaSQLResource {
 	@Produces("application/json")
 	@Path("/{userId}")
 	public Response getUser(@PathParam("userId") String userId) throws SQLException{
-		Connection con = ds.getConnection();
+		Connection con = getSQLConnection();
 		PreparedStatement getUser = con.prepareStatement("SELECT * FROM users WHERE userId = ?");
 
 		try{
@@ -137,7 +166,7 @@ public class JavaSQLResource {
 	@Produces("application/json")
 	public Response getAllUsers() throws SQLException{
 		JSONArray results = new JSONArray();
-		Connection con = ds.getConnection();
+		Connection con = getSQLConnection();
 		PreparedStatement getAllUsers = con.prepareStatement("SELECT * FROM users");
 		ResultSet data = getAllUsers.executeQuery();
 
@@ -164,7 +193,7 @@ public class JavaSQLResource {
 								@FormParam("lastName") String lastName,
 								@FormParam("password") String password)
 										throws SQLException{
-		Connection con = ds.getConnection();
+		Connection con = getSQLConnection();
 		PreparedStatement getUser = con.prepareStatement("SELECT * FROM users WHERE userId = ?");
 
 		try{
@@ -199,7 +228,7 @@ public class JavaSQLResource {
 	@DELETE
 	@Path("/{userId}")
 	public Response deleteUser(@PathParam("userId") String userId) throws SQLException{
-		Connection con = ds.getConnection();
+		Connection con = getSQLConnection();
 		PreparedStatement getUser = con.prepareStatement("SELECT * FROM users WHERE userId = ?");
 
 		try{

@@ -25,7 +25,6 @@ public class JavaSQLApplication extends MFPJAXRSApplication{
 	
 	@Override
 	protected void init() throws Exception {
-		JavaSQLResource.init();
 		logger.info("Adapter initialized!");
 	}
 	
