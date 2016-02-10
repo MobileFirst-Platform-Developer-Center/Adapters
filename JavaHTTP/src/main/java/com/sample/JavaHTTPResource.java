@@ -47,13 +47,6 @@ public class JavaHTTPResource {
 	private static HttpHost host;
 
 	public static void init() {
-		//Remove this when we go-live
-//		CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-//		credentialsProvider.setCredentials(AuthScope.ANY,
-//				new UsernamePasswordCredentials("mfpdev", "w0rkh4rd"));
-//		client =
-//				HttpClientBuilder.create().setDefaultCredentialsProvider(credentialsProvider).build();
-
 		client = HttpClientBuilder.create().build();
 		host = new HttpHost("mobilefirstplatform.ibmcloud.com");
 	}
