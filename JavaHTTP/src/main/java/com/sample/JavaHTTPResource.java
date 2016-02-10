@@ -19,12 +19,8 @@ package com.sample;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.wink.json4j.utils.XML;
@@ -52,13 +48,13 @@ public class JavaHTTPResource {
 
 	public static void init() {
 		//Remove this when we go-live
-		CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-		credentialsProvider.setCredentials(AuthScope.ANY,
-				new UsernamePasswordCredentials("mfpdev", "w0rkh4rd"));
-		client =
-				HttpClientBuilder.create().setDefaultCredentialsProvider(credentialsProvider).build();
+//		CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+//		credentialsProvider.setCredentials(AuthScope.ANY,
+//				new UsernamePasswordCredentials("mfpdev", "w0rkh4rd"));
+//		client =
+//				HttpClientBuilder.create().setDefaultCredentialsProvider(credentialsProvider).build();
 
-		//client = HttpClientBuilder.create().build();
+		client = HttpClientBuilder.create().build();
 		host = new HttpHost("mobilefirstplatform.ibmcloud.com");
 	}
 
