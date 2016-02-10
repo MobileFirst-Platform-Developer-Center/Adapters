@@ -19,10 +19,14 @@ package com.sample;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.wink.json4j.utils.XML;
 import org.xml.sax.SAXException;
 
@@ -47,8 +51,15 @@ public class JavaHTTPResource {
 	private static HttpHost host;
 
 	public static void init() {
-		client = HttpClients.createDefault();
-		host = new HttpHost("developer.ibm.com");
+		//Remove this when we go-live
+		CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+		credentialsProvider.setCredentials(AuthScope.ANY,
+				new UsernamePasswordCredentials("mfpdev", "w0rkh4rd"));
+		client =
+				HttpClientBuilder.create().setDefaultCredentialsProvider(credentialsProvider).build();
+
+		//client = HttpClientBuilder.create().build();
+		host = new HttpHost("mobilefirstplatform.ibmcloud.com");
 	}
 
 	public void execute(HttpUriRequest req, HttpServletResponse resultResponse)
@@ -75,10 +86,10 @@ public class JavaHTTPResource {
 	public void get(@Context HttpServletResponse response, @QueryParam("tag") String tag)
 			throws IOException, IllegalStateException, SAXException {
 		if(tag!=null && !tag.isEmpty()){
-			execute(new HttpGet("/mobilefirstplatform/tag/"+ tag +"/feed"), response);
+			execute(new HttpGet("/blog/atom/"+ tag +".xml"), response);
 		}
 		else{
-			execute(new HttpGet("/mobilefirstplatform/feed"), response);
+			execute(new HttpGet("/feed.xml"), response);
 		}
 
 	}
