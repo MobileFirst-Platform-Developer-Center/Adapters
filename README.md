@@ -1,6 +1,7 @@
 IBM MobileFirst Platform Foundation
 ===
 ## Adapters
+A Maven project containing multiple Java and JavaScript adapters, used in tutorials and sample applications.
 
 ### Tutorials
 https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/
