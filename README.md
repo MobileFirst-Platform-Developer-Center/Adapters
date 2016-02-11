@@ -1,6 +1,6 @@
 IBM MobileFirst Platform Foundation
 ===
-### Adapters
+## Adapters
 
 ### Tutorials
 https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/
