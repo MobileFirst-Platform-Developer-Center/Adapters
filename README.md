@@ -7,7 +7,7 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/
 
 ### Usage
 
-* Use either Maven or MobileFirst Developer CLI to [build and deploy the JavaSQL adapter](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
+* Use either Maven or MobileFirst Developer CLI to [build and deploy adapters](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
 * To test or debug an adapter, see the [testing and debugging adapters](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/testing-and-debugging-adapters) tutorial.
 
 ### Supported Levels
