@@ -57,14 +57,14 @@ public class JavaAdapterResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{first}/{middle}/{last}")
 	public JSONObject enterInfo(@PathParam("first") String first, @PathParam("middle") String middle, @PathParam("last") String last,
-							@QueryParam("age") int age, @FormParam("height") String height, @HeaderParam("Date") String date) throws JSONException {
+							@QueryParam("age") int age, @FormParam("height") String height, @HeaderParam("birthdate") String birthdate) throws JSONException {
 		JSONObject results = new JSONObject();
 		results.put("first",first);
 		results.put("middle",middle);
 		results.put("last",last);
 		results.put("age",age);
 		results.put("height",height);
-		results.put("Date",date);
+		results.put("birthdate",birthdate);
 		return results;
 	}
 
