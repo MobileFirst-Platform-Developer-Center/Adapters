@@ -18,7 +18,7 @@ package com.sample;
 
 import java.util.logging.Logger;
 
-import com.worklight.wink.extensions.MFPJAXRSApplication;
+import com.ibm.mfp.adapter.api.MFPJAXRSApplication;
 
 public class JavaHTTPApplication extends MFPJAXRSApplication{
 

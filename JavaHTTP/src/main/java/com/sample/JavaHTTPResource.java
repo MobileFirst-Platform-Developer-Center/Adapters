@@ -16,9 +16,15 @@
 
 package com.sample;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.util.logging.Logger;
+import org.apache.http.HttpHost;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.wink.json4j.utils.XML;
+import org.xml.sax.SAXException;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -27,20 +33,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
-
-import org.apache.http.HttpHost;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.wink.json4j.utils.XML;
-import org.xml.sax.SAXException;
-
-import com.worklight.adapters.rest.api.WLServerAPI;
-import com.worklight.adapters.rest.api.WLServerAPIProvider;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
 @Path("/")
 public class JavaHTTPResource {
@@ -48,22 +42,17 @@ public class JavaHTTPResource {
 	 * For more info on JAX-RS see https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs/index.html
 	 */
 
-	//Define logger (Standard java.util.Logger)
-    static Logger logger = Logger.getLogger(JavaHTTPResource.class.getName());
-
-    //Define the server api to be able to perform server operations
-    WLServerAPI api = WLServerAPIProvider.getWLServerAPI();
 
 	private static CloseableHttpClient client;
 	private static HttpHost host;
 
 	public static void init() {
-		client = HttpClients.createDefault();
-		host = new HttpHost("developer.ibm.com");
+		client = HttpClientBuilder.create().build();
+		host = new HttpHost("mobilefirstplatform.ibmcloud.com");
 	}
 
 	public void execute(HttpUriRequest req, HttpServletResponse resultResponse)
-			throws ClientProtocolException, IOException,
+			throws IOException,
 			IllegalStateException, SAXException {
 		HttpResponse RSSResponse = client.execute(host, req);
 		ServletOutputStream os = resultResponse.getOutputStream();
@@ -84,12 +73,12 @@ public class JavaHTTPResource {
 	@GET
 	@Produces("application/json")
 	public void get(@Context HttpServletResponse response, @QueryParam("tag") String tag)
-			throws ClientProtocolException, IOException, IllegalStateException, SAXException {
+			throws IOException, IllegalStateException, SAXException {
 		if(tag!=null && !tag.isEmpty()){
-			execute(new HttpGet("/mobilefirstplatform/tag/"+ tag +"/feed"), response);
+			execute(new HttpGet("/blog/atom/"+ tag +".xml"), response);
 		}
 		else{
-			execute(new HttpGet("/mobilefirstplatform/feed"), response);
+			execute(new HttpGet("/feed.xml"), response);
 		}
 
 	}
