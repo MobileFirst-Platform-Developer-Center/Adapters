@@ -70,9 +70,9 @@ public class JavaSQLResource {
 		if(updatedProperties() || ds == null){
 			ds= new BasicDataSource();
 			ds.setDriverClassName("com.mysql.jdbc.Driver");
-			ds.setUrl(configurationAPI.getPropertyValue("DB_url"));
-			ds.setUsername(configurationAPI.getPropertyValue("DB_username"));
-			ds.setPassword(configurationAPI.getPropertyValue("DB_password"));
+			ds.setUrl(DB_url);
+			ds.setUsername(DB_username);
+			ds.setPassword(DB_password);
 		}
 		try {
 			conn = ds.getConnection();
@@ -94,7 +94,7 @@ public class JavaSQLResource {
 
 		return !last_url.equals(DB_url) ||
 				!last_username.equals(DB_username) ||
-				!last_password.equals(last_password);
+				!last_password.equals(DB_password);
 	}
 
 	@POST
