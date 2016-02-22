@@ -35,16 +35,12 @@ public class JavaSQLApplication extends MFPJAXRSApplication{
 	@Override
 	protected void init() throws Exception {
 		logger.info("Adapter initialized!");
-
-		String DB_url = configurationAPI.getPropertyValue("DB_url");
-		String DB_username = configurationAPI.getPropertyValue("DB_username");
-		String DB_password = configurationAPI.getPropertyValue("DB_password");
-
+		
 		dataSource= new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl(DB_url);
-		dataSource.setUsername(DB_username);
-		dataSource.setPassword(DB_password);
+		dataSource.setUrl(configurationAPI.getPropertyValue("DB_url"));
+		dataSource.setUsername(configurationAPI.getPropertyValue("DB_username"));
+		dataSource.setPassword(configurationAPI.getPropertyValue("DB_password"));
 	}
 	
 	@Override
