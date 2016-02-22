@@ -16,16 +16,35 @@
 
 package com.sample;
 
+import com.ibm.mfp.adapter.api.ConfigurationAPI;
+import com.ibm.mfp.adapter.api.MFPJAXRSApplication;
+import org.apache.commons.dbcp.BasicDataSource;
+
+import javax.ws.rs.core.Context;
 import java.util.logging.Logger;
-import com.worklight.wink.extensions.MFPJAXRSApplication;
 
 public class JavaSQLApplication extends MFPJAXRSApplication{
 
 	static Logger logger = Logger.getLogger(JavaSQLApplication.class.getName());
+
+	public BasicDataSource dataSource = null;
+
+	@Context
+	ConfigurationAPI configurationAPI;
 	
 	@Override
 	protected void init() throws Exception {
 		logger.info("Adapter initialized!");
+
+		String DB_url = configurationAPI.getPropertyValue("DB_url");
+		String DB_username = configurationAPI.getPropertyValue("DB_username");
+		String DB_password = configurationAPI.getPropertyValue("DB_password");
+
+		dataSource= new BasicDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl(DB_url);
+		dataSource.setUsername(DB_username);
+		dataSource.setPassword(DB_password);
 	}
 	
 	@Override

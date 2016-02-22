@@ -16,32 +16,16 @@
 
 package com.sample;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.logging.Logger;
-
-import javax.ws.rs.DELETE;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-
 import com.ibm.json.java.JSONArray;
 import com.ibm.json.java.JSONObject;
 import com.ibm.mfp.adapter.api.AdaptersAPI;
 import com.ibm.mfp.adapter.api.ConfigurationAPI;
-import com.worklight.adapters.rest.api.WLServerAPI;
-import com.worklight.adapters.rest.api.WLServerAPIProvider;
-import org.apache.commons.dbcp.BasicDataSource;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+import java.sql.*;
 
 
 @Path("/")
@@ -50,52 +34,18 @@ public class JavaSQLResource {
 	 * For more info on JAX-RS see https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs/index.html
 	 */
 
-	//Define logger (Standard java.util.Logger)
-    static Logger logger = Logger.getLogger(JavaSQLResource.class.getName());
-
-	private static BasicDataSource ds = null;
-	private static String DB_url = null;
-	private static String DB_username = null;
-	private static String DB_password  = null;
+	@Context
+	ConfigurationAPI configurationAPI;
 
 	@Context
 	AdaptersAPI adaptersAPI;
 
-	@Context
-	ConfigurationAPI configurationAPI;
-
-	public Connection getSQLConnection(){
+	public Connection getSQLConnection() throws SQLException{
 		// Create a connection object to the database
-		Connection conn = null;
-		if(updatedProperties() || ds == null){
-			ds= new BasicDataSource();
-			ds.setDriverClassName("com.mysql.jdbc.Driver");
-			ds.setUrl(DB_url);
-			ds.setUsername(DB_username);
-			ds.setPassword(DB_password);
-		}
-		try {
-			conn = ds.getConnection();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return conn;
+		JavaSQLApplication app = adaptersAPI.getJaxRsApplication(JavaSQLApplication.class);
+		return app.dataSource.getConnection();
 	}
 
-	private boolean updatedProperties() {
-		// Check if the properties were changed during runtime (in the console)
-		String last_url = DB_url;
-		String last_username = DB_username;
-		String last_password  = DB_password;
-
-		DB_url = configurationAPI.getPropertyValue("DB_url");
-		DB_username = configurationAPI.getPropertyValue("DB_username");
-		DB_password = configurationAPI.getPropertyValue("DB_password");
-
-		return !last_url.equals(DB_url) ||
-				!last_username.equals(DB_username) ||
-				!last_password.equals(DB_password);
-	}
 
 	@POST
 	public Response createUser(@FormParam("userId") String userId,
