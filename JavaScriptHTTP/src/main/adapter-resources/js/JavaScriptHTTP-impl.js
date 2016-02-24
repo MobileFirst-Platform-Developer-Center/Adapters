@@ -14,28 +14,31 @@
 * limitations under the License.
 */
 
-function getFeeds() {
+
+/**
+ * @param tag: a topic such as MobileFirst_Platform, Bluemix, Cordova.
+ * @returns json list of items.
+ */
+
+function getFeed(tag) {
 	var input = {
 	    method : 'get',
 	    returnedContentType : 'xml',
-	    path : "rss.xml"
+	    path : getPath(tag)
 	};
 	
 	
 	return WL.Server.invokeHttp(input);
 }
 
-function getFeedsFiltered() {
-	
-	var input = {
-	    method : 'get',
-	    returnedContentType : 'xml',
-	    path : "rss.xml",
-	    transformation : {
-		    type : 'xslFile',
-		    xslFile : 'filtered.xsl'
-	    }
-	};
-	
-	return WL.Server.invokeHttp(input);
+/**
+ * Helper function to build the URL path.
+ */
+function getPath(tag){
+    if(tag == undefined || tag === ''){
+        return 'feed.xml';
+    } else {
+        return 'blog/atom/' + tag + '.xml';
+    }
 }
+

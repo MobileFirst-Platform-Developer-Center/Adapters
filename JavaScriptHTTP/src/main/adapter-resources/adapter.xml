@@ -23,16 +23,15 @@ limitations under the License.
 	<description>JavaScriptHTTP</description>
 	<connectivity>
 		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
-			<protocol>http</protocol>
-			<domain>www.engadget.com</domain>
-			<port>80</port>
+			<protocol>https</protocol>
+			<domain>mobilefirstplatform.ibmcloud.com</domain>
+			<port>443</port>
 			<connectionTimeoutInMilliseconds>30000</connectionTimeoutInMilliseconds>
 			<socketTimeoutInMilliseconds>30000</socketTimeoutInMilliseconds>
 			<maxConcurrentConnectionsPerNode>50</maxConcurrentConnectionsPerNode>
 		</connectionPolicy>
 	</connectivity>
 
-	<procedure name="getFeeds"/>
-	<procedure name="getFeedsFiltered"/>
+	<procedure name="getFeed"/>
 
 </mfp:adapter>
