@@ -1,5 +1,5 @@
 /**
-* Copyright 2015 IBM Corp.
+* Copyright 2016 IBM Corp.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -23,16 +23,16 @@ import com.ibm.mfp.adapter.api.MFPJAXRSApplication;
 public class JavaHTTPApplication extends MFPJAXRSApplication{
 
 	static Logger logger = Logger.getLogger(JavaHTTPApplication.class.getName());
-	
+
 	@Override
 	protected void init() throws Exception {
 		JavaHTTPResource.init();
 		logger.info("Adapter initialized!");
 	}
-	
+
 	@Override
 	protected String getPackageToScan() {
-		//The package of this class will be scanned (recursively) to find JAX-RS resources. 
+		//The package of this class will be scanned (recursively) to find JAX-RS resources.
 		return getClass().getPackage().getName();
 	}
 }

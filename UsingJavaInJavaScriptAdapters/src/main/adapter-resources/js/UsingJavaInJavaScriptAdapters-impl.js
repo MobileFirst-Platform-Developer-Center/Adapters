@@ -1,5 +1,5 @@
 /**
-* Copyright 2015 IBM Corp.
+* Copyright 2016 IBM Corp.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ function addTwoIntegers(a,b){
 }
 
 function subtractTwoIntegers(a,b){
-	var calcInstance = new com.sample.customcode.Calculator();	
+	var calcInstance = new com.sample.customcode.Calculator();
 	return {
 		result : calcInstance.subtractTwoIntegers(a,b)
 	};

@@ -1,5 +1,5 @@
 /**
-* Copyright 2015 IBM Corp.
+* Copyright 2016 IBM Corp.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -31,21 +31,21 @@ public class JavaSQLApplication extends MFPJAXRSApplication{
 
 	@Context
 	ConfigurationAPI configurationAPI;
-	
+
 	@Override
 	protected void init() throws Exception {
 		logger.info("Adapter initialized!");
-		
+
 		dataSource= new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl(configurationAPI.getPropertyValue("DB_url"));
 		dataSource.setUsername(configurationAPI.getPropertyValue("DB_username"));
 		dataSource.setPassword(configurationAPI.getPropertyValue("DB_password"));
 	}
-	
+
 	@Override
 	protected String getPackageToScan() {
-		//The package of this class will be scanned (recursively) to find JAX-RS resources. 
+		//The package of this class will be scanned (recursively) to find JAX-RS resources.
 		return getClass().getPackage().getName();
 	}
 }

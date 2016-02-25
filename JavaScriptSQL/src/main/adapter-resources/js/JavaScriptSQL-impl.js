@@ -1,5 +1,5 @@
 /**
-* Copyright 2015 IBM Corp.
+* Copyright 2016 IBM Corp.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
 */
 
 //Create SQL query
-var getAccountsTransactionsStatement = WL.Server.createSQLStatement( 
-	"SELECT transactionId, fromAccount, toAccount, transactionDate, transactionAmount, transactionType " + 
-	"FROM accounttransactions " + 
+var getAccountsTransactionsStatement = WL.Server.createSQLStatement(
+	"SELECT transactionId, fromAccount, toAccount, transactionDate, transactionAmount, transactionType " +
+	"FROM accounttransactions " +
 	"WHERE accounttransactions.fromAccount = ? OR accounttransactions.toAccount = ? " +
-	"ORDER BY transactionDate DESC " + 
+	"ORDER BY transactionDate DESC " +
 	"LIMIT 20;"
 );
 
-//Invoke prepared SQL query and return invocation result	
+//Invoke prepared SQL query and return invocation result
 function getAccountTransactions1(accountId){
 	return WL.Server.invokeSQLStatement({
 		preparedStatement : getAccountsTransactionsStatement,
@@ -37,8 +37,6 @@ function getAccountTransactions2(accountId){
 	return WL.Server.invokeSQLStoredProcedure({
 		procedure : "getAccountTransactions",
 		parameters : [accountId]
-		
+
 	});
 }
-
-
