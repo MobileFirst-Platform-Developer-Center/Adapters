@@ -48,7 +48,7 @@ public class JavaHTTPResource {
 
 	public static void init() {
 		client = HttpClientBuilder.create().build();
-		host = new HttpHost("mobilefirstplatform.ibmcloud.com");
+		host = new HttpHost("mobilefirstplatform.ibmcloud.com", 443, "https");
 	}
 
 	public void execute(HttpUriRequest req, HttpServletResponse resultResponse)
