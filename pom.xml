@@ -29,7 +29,7 @@ limitations under the License.
 		<module>JavaHTTP</module>
 		<module>JavaSQL</module>
 		<module>UsingJavaInJavaScriptAdapters</module>
-		<module>SOAPAdapter</module>
+		<module>JavaScriptSOAP</module>
   </modules>
 
 	<properties>
