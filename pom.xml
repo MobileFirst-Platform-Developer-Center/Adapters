@@ -14,6 +14,7 @@
 		<module>JavaHTTP</module>
 		<module>JavaSQL</module>
 		<module>UsingJavaInJavaScriptAdapters</module>
+		<module>SOAPAdapter</module>
   </modules>
 
 	<properties>
