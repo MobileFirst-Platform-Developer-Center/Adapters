@@ -21,33 +21,25 @@
  */
 function getCitiesByCountry(countryName) {
 	var request = 
-	'<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
-		'<soap:Body>' +
-			'<GetCitiesByCountry xmlns="http://www.webserviceX.NET">' +
-				'<CountryName>{0}</CountryName>' +
-			'</GetCitiesByCountry>' +
-		'</soap:Body>' +
-	'</soap:Envelope>';
+		<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+			<soap:Body>
+				<GetCitiesByCountry xmlns="http://www.webserviceX.NET">
+					<CountryName>{countryName}</CountryName>
+				</GetCitiesByCountry>
+			</soap:Body>
+		</soap:Envelope>;
 	
 	var input = {
 		method: 'post',
 		returnedContentType: 'xml',
 		path: '/globalweather.asmx',
 		body: {
-			content: format(request, countryName),
+			content: request.toString(),
 			contentType: 'text/xml; charset=utf-8'
-		},
+		}
 	};
 	var result = WL.Server.invokeHttp(input);
 	return result.Envelope.Body;
-};
-
-function format(msg) {
-	var args = Array.prototype.slice.call(arguments, 1);
-	var formattedMsg = msg.replace(/{(\d+)}/g, function(m, i) {
-		return args[i] || m;
-	});
-	return formattedMsg;
 };
 
 /**
@@ -57,23 +49,23 @@ function format(msg) {
  */
 function getWeatherInfo(cityName, countryName) {
 	var request = 
-		'<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
-			'<soap:Body>' +
-				'<GetWeather xmlns="http://www.webserviceX.NET">' +
-					'<CityName>{0}</CityName>' +
-					'<CountryName>{1}</CountryName>' +
-				'</GetWeather>' +
-			'</soap:Body>' +
-		'</soap:Envelope>';
+		<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+			<soap:Body>
+				<GetWeather xmlns="http://www.webserviceX.NET">
+					<CityName>{cityName}</CityName>
+					<CountryName>{countryName}</CountryName>
+				</GetWeather>
+			</soap:Body>
+		</soap:Envelope>;
 	
 	var input = {
 		method: 'post',
 		returnedContentType: 'xml',
 		path: '/globalweather.asmx',
 		body: {
-			content: format(request, cityName, countryName),
+			content: request.toString(),
 			contentType: 'text/xml; charset=utf-8'
-		},
+		}
 	};
 	var result = WL.Server.invokeHttp(input);
 	return result.Envelope.Body;
