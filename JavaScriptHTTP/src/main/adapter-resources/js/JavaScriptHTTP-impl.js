@@ -14,7 +14,6 @@
 * limitations under the License.
 */
 
-
 /**
  * @param tag: a topic such as MobileFirst_Platform, Bluemix, Cordova.
  * @returns json list of items.
@@ -27,7 +26,6 @@ function getFeed(tag) {
 	    path : getPath(tag)
 	};
 
-
 	return WL.Server.invokeHttp(input);
 }
 
@@ -35,7 +33,7 @@ function getFeed(tag) {
  * Helper function to build the URL path.
  */
 function getPath(tag){
-    if(tag == undefined || tag === ''){
+    if(tag === undefined || tag === ''){
         return 'feed.xml';
     } else {
         return 'blog/atom/' + tag + '.xml';
