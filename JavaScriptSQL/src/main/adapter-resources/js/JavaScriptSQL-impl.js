@@ -14,14 +14,11 @@
 * limitations under the License.
 */
 
-//Create SQL query
-var getAccountsTransactionsStatement = WL.Server.createSQLStatement(
-	"SELECT transactionId, fromAccount, toAccount, transactionDate, transactionAmount, transactionType " +
+var getAccountsTransactionsStatement = "SELECT transactionId, fromAccount, toAccount, transactionDate, transactionAmount, transactionType " +
 	"FROM accounttransactions " +
 	"WHERE accounttransactions.fromAccount = ? OR accounttransactions.toAccount = ? " +
 	"ORDER BY transactionDate DESC " +
-	"LIMIT 20;"
-);
+	"LIMIT 20;";
 
 //Invoke prepared SQL query and return invocation result
 function getAccountTransactions1(accountId){
