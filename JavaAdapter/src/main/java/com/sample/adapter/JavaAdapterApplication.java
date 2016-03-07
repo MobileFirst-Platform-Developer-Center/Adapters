@@ -16,11 +16,11 @@
 
 package com.sample.adapter;
 
-import java.util.logging.Logger;
-import javax.ws.rs.core.Application;
-import java.util.*;
+import com.ibm.mfp.adapter.api.MFPJAXRSApplication;
 
-public class JavaAdapterApplication extends Application{
+import java.util.logging.Logger;
+
+public class JavaAdapterApplication extends MFPJAXRSApplication{
 
 	static Logger logger = Logger.getLogger(JavaAdapterApplication.class.getName());
 
@@ -41,9 +41,4 @@ public class JavaAdapterApplication extends Application{
 		return getClass().getPackage().getName();
 	}
 
-		public Set<Class<?>> getClasses() {
-			Set<Class<?>> classes = new HashSet<Class<?>>();
-			classes.add(JavaAdapterResource.class);
-			return classes;
-		}
 }

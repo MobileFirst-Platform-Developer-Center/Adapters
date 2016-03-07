@@ -42,6 +42,9 @@ public class JavaSQLApplication extends MFPJAXRSApplication{
 		dataSource.setUsername(configurationAPI.getPropertyValue("DB_username"));
 		dataSource.setPassword(configurationAPI.getPropertyValue("DB_password"));
 	}
+	protected void destroy() throws Exception {
+		logger.info("Adapter destroyed!");
+	}
 
 	@Override
 	protected String getPackageToScan() {

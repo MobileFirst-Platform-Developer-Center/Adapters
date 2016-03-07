@@ -26,7 +26,7 @@ function getFeed(tag) {
 	    path : getPath(tag)
 	};
 
-	return WL.Server.invokeHttp(input);
+	return MFP.Server.invokeHttp(input);
 }
 
 /**

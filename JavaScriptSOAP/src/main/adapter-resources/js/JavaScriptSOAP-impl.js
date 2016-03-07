@@ -20,7 +20,7 @@
  * @returns json list of items.
  */
 function getCitiesByCountry(countryName) {
-	var request = 
+	var request =
 		<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 			<soap:Body>
 				<GetCitiesByCountry xmlns="http://www.webserviceX.NET">
@@ -28,7 +28,7 @@ function getCitiesByCountry(countryName) {
 				</GetCitiesByCountry>
 			</soap:Body>
 		</soap:Envelope>;
-	
+
 	var input = {
 		method: 'post',
 		returnedContentType: 'xml',
@@ -38,7 +38,7 @@ function getCitiesByCountry(countryName) {
 			contentType: 'text/xml; charset=utf-8'
 		}
 	};
-	var result = WL.Server.invokeHttp(input);
+	var result = MFP.Server.invokeHttp(input);
 	return result.Envelope.Body;
 };
 
@@ -48,7 +48,7 @@ function getCitiesByCountry(countryName) {
  * @returns json list of items.
  */
 function getWeatherInfo(cityName, countryName) {
-	var request = 
+	var request =
 		<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 			<soap:Body>
 				<GetWeather xmlns="http://www.webserviceX.NET">
@@ -57,7 +57,7 @@ function getWeatherInfo(cityName, countryName) {
 				</GetWeather>
 			</soap:Body>
 		</soap:Envelope>;
-	
+
 	var input = {
 		method: 'post',
 		returnedContentType: 'xml',
@@ -67,6 +67,6 @@ function getWeatherInfo(cityName, countryName) {
 			contentType: 'text/xml; charset=utf-8'
 		}
 	};
-	var result = WL.Server.invokeHttp(input);
+	var result = MFP.Server.invokeHttp(input);
 	return result.Envelope.Body;
 };
