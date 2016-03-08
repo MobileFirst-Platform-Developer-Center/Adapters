@@ -22,7 +22,7 @@ var getAccountsTransactionsStatement = "SELECT transactionId, fromAccount, toAcc
 
 //Invoke prepared SQL query and return invocation result
 function getAccountTransactions1(accountId){
-	return WL.Server.invokeSQLStatement({
+	return MFP.Server.invokeSQLStatement({
 		preparedStatement : getAccountsTransactionsStatement,
 		parameters : [accountId, accountId]
 	});
@@ -31,7 +31,7 @@ function getAccountTransactions1(accountId){
 
 //Invoke stored SQL procedure and return invocation result
 function getAccountTransactions2(accountId){
-	return WL.Server.invokeSQLStoredProcedure({
+	return MFP.Server.invokeSQLStoredProcedure({
 		procedure : "getAccountTransactions",
 		parameters : [accountId]
 
