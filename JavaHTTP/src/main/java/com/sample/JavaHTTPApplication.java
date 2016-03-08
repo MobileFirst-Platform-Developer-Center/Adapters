@@ -30,9 +30,14 @@ public class JavaHTTPApplication extends MFPJAXRSApplication{
 		logger.info("Adapter initialized!");
 	}
 
+	protected void destroy() throws Exception {
+		logger.info("Adapter destroyed!");
+	}
+
 	@Override
 	protected String getPackageToScan() {
 		//The package of this class will be scanned (recursively) to find JAX-RS resources.
 		return getClass().getPackage().getName();
 	}
+
 }

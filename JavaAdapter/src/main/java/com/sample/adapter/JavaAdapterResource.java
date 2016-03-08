@@ -21,47 +21,11 @@ import org.apache.wink.json4j.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
-import java.util.logging.Logger;
-
 
 @Path("/users")
 public class JavaAdapterResource {
-	/*
-	 * For more info on JAX-RS see https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs/index.html
-	 */
 
-	//Define logger (Standard java.util.Logger)
-	static Logger logger = Logger.getLogger(JavaAdapterResource.class.getName());
-
-
-
-	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users" */
-	@GET
-	@Produces("application/xml")
-	public String hello(){
-		//log message to server log
-		logger.info("Logging info message...");
-
-		return "<html><title>Hello from the Java REST adapter</title><body>Hello from the Java REST adapter</body></html>";
-	}
-
-	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/{username}" */
-
-	@GET
-	@Path("/{username}")
-	public String helloUser(@PathParam("username") String name){
-		return "Hello " + name;
-	}
-
-	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/helloUserQuery?name=value" */
-	@GET
-	@Path("/helloUserQuery")
-	public String helloUserQuery(@QueryParam("username") String name){
-		return "Hello " + name;
-	}
-
-	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/{first}/{middle}/{last}?age=value" */
+	/* Path for method: "<server address>/mfp/api/adapters/JavaAdapter/users/{first}/{middle}/{last}?age=value" */
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{first}/{middle}/{last}")
@@ -76,27 +40,5 @@ public class JavaAdapterResource {
 		results.put("birthdate",birthdate);
 		return results;
 	}
-
-
-
-	/* Path for method: "<server address>/(project name)/adapters/JavaAdapter/users/newUsers" */
-	@PUT
-	@Path("/newUsers")
-	public String newUsers(@FormParam("username") List<String> users){
-		if(users!=null && users.size() != 0){
-			String usersTemp = "";
-			int index = 0;
-			for (String user : users) {
-				usersTemp += " " +user;
-				if(index < users.size() - 1 && users.size() != 2) usersTemp += ",";
-				if(++index == users.size() -1 && users.size() != 1) usersTemp += " and";
-			}
-			return "Hello" + usersTemp;
-		}
-
-		return "Hello";
-	}
-
-
 
 }

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 Copyright 2016 IBM Corp.
 
@@ -37,6 +38,7 @@ limitations under the License.
 		<mfpfUrl>http://localhost:9080/mfpadmin</mfpfUrl>
 		<mfpfUser>admin</mfpfUser>
 		<mfpfPassword>admin</mfpfPassword>
+		<mfpfRuntime>mfp</mfpfRuntime>
 	</properties>
 
 	<build>
