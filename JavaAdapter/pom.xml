@@ -44,6 +44,9 @@ limitations under the License.
 	</dependencies>
 
 	<properties>
+		<!-- Use UTF-8 as the encoding of the adapter -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
 		<!-- parameters for deploy mfpf adapter -->
 		<mfpfUrl>http://localhost:9080/mfpadmin</mfpfUrl>
 		<mfpfUser>admin</mfpfUser>
