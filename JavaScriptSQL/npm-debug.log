@@ -1,0 +1,529 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/idanadar/.nvm/versions/node/v5.10.1/bin/node',
+1 verbose cli   '/Users/idanadar/.nvm/versions/node/v5.10.1/bin/npm',
+1 verbose cli   'update',
+1 verbose cli   '-g' ]
+2 info using npm@3.8.3
+3 info using node@v5.10.1
+4 silly mapToRegistry name cordova
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+7 silly mapToRegistry data Result {
+7 silly mapToRegistry   raw: 'cordova',
+7 silly mapToRegistry   scope: null,
+7 silly mapToRegistry   name: 'cordova',
+7 silly mapToRegistry   rawSpec: '',
+7 silly mapToRegistry   spec: 'latest',
+7 silly mapToRegistry   type: 'tag' }
+8 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova
+9 silly mapToRegistry name cordova-plugin-mfp
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'cordova-plugin-mfp',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   name: 'cordova-plugin-mfp',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+14 silly mapToRegistry name graceful-fs
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+17 silly mapToRegistry data Result {
+17 silly mapToRegistry   raw: 'graceful-fs',
+17 silly mapToRegistry   scope: null,
+17 silly mapToRegistry   name: 'graceful-fs',
+17 silly mapToRegistry   rawSpec: '',
+17 silly mapToRegistry   spec: 'latest',
+17 silly mapToRegistry   type: 'tag' }
+18 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/graceful-fs
+19 silly mapToRegistry name ionic
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+22 silly mapToRegistry data Result {
+22 silly mapToRegistry   raw: 'ionic',
+22 silly mapToRegistry   scope: null,
+22 silly mapToRegistry   name: 'ionic',
+22 silly mapToRegistry   rawSpec: '',
+22 silly mapToRegistry   spec: 'latest',
+22 silly mapToRegistry   type: 'tag' }
+23 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+24 silly mapToRegistry name lodash
+25 silly mapToRegistry using default registry
+26 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+27 silly mapToRegistry data Result {
+27 silly mapToRegistry   raw: 'lodash',
+27 silly mapToRegistry   scope: null,
+27 silly mapToRegistry   name: 'lodash',
+27 silly mapToRegistry   rawSpec: '',
+27 silly mapToRegistry   spec: 'latest',
+27 silly mapToRegistry   type: 'tag' }
+28 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/lodash
+29 silly mapToRegistry name mfpdev-cli
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+32 silly mapToRegistry data Result {
+32 silly mapToRegistry   raw: 'mfpdev-cli',
+32 silly mapToRegistry   scope: null,
+32 silly mapToRegistry   name: 'mfpdev-cli',
+32 silly mapToRegistry   rawSpec: '',
+32 silly mapToRegistry   spec: 'latest',
+32 silly mapToRegistry   type: 'tag' }
+33 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpdev-cli
+34 silly mapToRegistry name mfpmigrate-cli
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+37 silly mapToRegistry data Result {
+37 silly mapToRegistry   raw: 'mfpmigrate-cli',
+37 silly mapToRegistry   scope: null,
+37 silly mapToRegistry   name: 'mfpmigrate-cli',
+37 silly mapToRegistry   rawSpec: '',
+37 silly mapToRegistry   spec: 'latest',
+37 silly mapToRegistry   type: 'tag' }
+38 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpmigrate-cli
+39 silly mapToRegistry name npm
+40 silly mapToRegistry using default registry
+41 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+42 silly mapToRegistry data Result {
+42 silly mapToRegistry   raw: 'npm',
+42 silly mapToRegistry   scope: null,
+42 silly mapToRegistry   name: 'npm',
+42 silly mapToRegistry   rawSpec: '',
+42 silly mapToRegistry   spec: 'latest',
+42 silly mapToRegistry   type: 'tag' }
+43 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/npm
+44 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpmigrate-cli
+45 verbose request no auth needed
+46 info attempt registry request try #1 at 06:59:51
+47 verbose request id 5a0409b7d3a84e08
+48 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpmigrate-cli
+49 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/graceful-fs
+50 verbose request no auth needed
+51 info attempt registry request try #1 at 06:59:51
+52 verbose lastModified Sun, 05 Jun 2016 15:05:38 GMT
+53 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/graceful-fs
+54 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova
+55 verbose request no auth needed
+56 info attempt registry request try #1 at 06:59:51
+57 verbose lastModified Sun, 05 Jun 2016 15:05:06 GMT
+58 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova
+59 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+60 verbose request no auth needed
+61 info attempt registry request try #1 at 06:59:51
+62 verbose lastModified Mon, 13 Jun 2016 20:05:40 GMT
+63 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+64 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+65 verbose request no auth needed
+66 info attempt registry request try #1 at 06:59:51
+67 verbose lastModified Sun, 05 Jun 2016 15:05:25 GMT
+68 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+69 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpdev-cli
+70 verbose request no auth needed
+71 info attempt registry request try #1 at 06:59:51
+72 verbose lastModified Tue, 07 Jun 2016 02:45:52 GMT
+73 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpdev-cli
+74 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/lodash
+75 verbose request no auth needed
+76 info attempt registry request try #1 at 06:59:51
+77 verbose lastModified Sun, 05 Jun 2016 15:05:06 GMT
+78 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/lodash
+79 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/npm
+80 verbose request no auth needed
+81 info attempt registry request try #1 at 06:59:52
+82 verbose lastModified Sun, 05 Jun 2016 15:05:07 GMT
+83 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/npm
+84 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/graceful-fs
+85 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+85 verbose headers   server: 'Nexus/2.12.0-01',
+85 verbose headers   'x-frame-options': 'SAMEORIGIN',
+85 verbose headers   'x-content-type-options': 'nosniff',
+85 verbose headers   'accept-ranges': 'bytes',
+85 verbose headers   'content-type': 'application/json',
+85 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+85 verbose headers   'content-length': '53769' }
+86 silly get cb [ 200,
+86 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+86 silly get     server: 'Nexus/2.12.0-01',
+86 silly get     'x-frame-options': 'SAMEORIGIN',
+86 silly get     'x-content-type-options': 'nosniff',
+86 silly get     'accept-ranges': 'bytes',
+86 silly get     'content-type': 'application/json',
+86 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+86 silly get     'content-length': '53769' } ]
+87 verbose get saving graceful-fs to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/graceful-fs/.cache.json
+88 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+89 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/lodash
+90 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+90 verbose headers   server: 'Nexus/2.12.0-01',
+90 verbose headers   'x-frame-options': 'SAMEORIGIN',
+90 verbose headers   'x-content-type-options': 'nosniff',
+90 verbose headers   'accept-ranges': 'bytes',
+90 verbose headers   'content-type': 'application/json',
+90 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+90 verbose headers   'content-length': '148601' }
+91 silly get cb [ 200,
+91 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+91 silly get     server: 'Nexus/2.12.0-01',
+91 silly get     'x-frame-options': 'SAMEORIGIN',
+91 silly get     'x-content-type-options': 'nosniff',
+91 silly get     'accept-ranges': 'bytes',
+91 silly get     'content-type': 'application/json',
+91 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+91 silly get     'content-length': '148601' } ]
+92 verbose get saving lodash to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/lodash/.cache.json
+93 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+94 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpmigrate-cli
+95 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+95 verbose headers   server: 'Nexus/2.12.0-01',
+95 verbose headers   'x-frame-options': 'SAMEORIGIN',
+95 verbose headers   'x-content-type-options': 'nosniff',
+95 verbose headers   'accept-ranges': 'bytes',
+95 verbose headers   'content-type': 'application/json',
+95 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:51 GMT',
+95 verbose headers   'content-length': '173426' }
+96 silly get cb [ 200,
+96 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+96 silly get     server: 'Nexus/2.12.0-01',
+96 silly get     'x-frame-options': 'SAMEORIGIN',
+96 silly get     'x-content-type-options': 'nosniff',
+96 silly get     'accept-ranges': 'bytes',
+96 silly get     'content-type': 'application/json',
+96 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:51 GMT',
+96 silly get     'content-length': '173426' } ]
+97 verbose get saving mfpmigrate-cli to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/mfpmigrate-cli/.cache.json
+98 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+99 silly cache add args [ 'mfpmigrate-cli',
+99 silly cache add   '/Users/idanadar/Desktop/mfpmigrate-cli.tgz' ]
+100 verbose cache add spec mfpmigrate-cli@/Users/idanadar/Desktop/mfpmigrate-cli.tgz
+101 silly cache add parsed spec Result {
+101 silly cache add   raw: 'mfpmigrate-cli@/Users/idanadar/Desktop/mfpmigrate-cli.tgz',
+101 silly cache add   scope: null,
+101 silly cache add   name: 'mfpmigrate-cli',
+101 silly cache add   rawSpec: '/Users/idanadar/Desktop/mfpmigrate-cli.tgz',
+101 silly cache add   spec: '/Users/idanadar/Desktop/mfpmigrate-cli.tgz',
+101 silly cache add   type: 'local' }
+102 error addLocal Could not install /Users/idanadar/Desktop/mfpmigrate-cli.tgz
+103 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova
+104 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+104 verbose headers   server: 'Nexus/2.12.0-01',
+104 verbose headers   'x-frame-options': 'SAMEORIGIN',
+104 verbose headers   'x-content-type-options': 'nosniff',
+104 verbose headers   'accept-ranges': 'bytes',
+104 verbose headers   'content-type': 'application/json',
+104 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+104 verbose headers   'content-length': '495240' }
+105 silly get cb [ 200,
+105 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+105 silly get     server: 'Nexus/2.12.0-01',
+105 silly get     'x-frame-options': 'SAMEORIGIN',
+105 silly get     'x-content-type-options': 'nosniff',
+105 silly get     'accept-ranges': 'bytes',
+105 silly get     'content-type': 'application/json',
+105 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+105 silly get     'content-length': '495240' } ]
+106 verbose get saving cordova to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/cordova/.cache.json
+107 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+108 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpdev-cli
+109 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+109 verbose headers   server: 'Nexus/2.12.0-01',
+109 verbose headers   'x-frame-options': 'SAMEORIGIN',
+109 verbose headers   'x-content-type-options': 'nosniff',
+109 verbose headers   'accept-ranges': 'bytes',
+109 verbose headers   'content-type': 'application/json',
+109 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+109 verbose headers   'content-length': '1040443' }
+110 silly get cb [ 200,
+110 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+110 silly get     server: 'Nexus/2.12.0-01',
+110 silly get     'x-frame-options': 'SAMEORIGIN',
+110 silly get     'x-content-type-options': 'nosniff',
+110 silly get     'accept-ranges': 'bytes',
+110 silly get     'content-type': 'application/json',
+110 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+110 silly get     'content-length': '1040443' } ]
+111 verbose get saving mfpdev-cli to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/mfpdev-cli/.cache.json
+112 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+113 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+114 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+114 verbose headers   server: 'Nexus/2.12.0-01',
+114 verbose headers   'x-frame-options': 'SAMEORIGIN',
+114 verbose headers   'x-content-type-options': 'nosniff',
+114 verbose headers   'accept-ranges': 'bytes',
+114 verbose headers   'content-type': 'application/json',
+114 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+114 verbose headers   'content-length': '1078432' }
+115 silly get cb [ 200,
+115 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+115 silly get     server: 'Nexus/2.12.0-01',
+115 silly get     'x-frame-options': 'SAMEORIGIN',
+115 silly get     'x-content-type-options': 'nosniff',
+115 silly get     'accept-ranges': 'bytes',
+115 silly get     'content-type': 'application/json',
+115 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:50 GMT',
+115 silly get     'content-length': '1078432' } ]
+116 verbose get saving cordova-plugin-mfp to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp/.cache.json
+117 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+118 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+119 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+119 verbose headers   server: 'Nexus/2.12.0-01',
+119 verbose headers   'x-frame-options': 'SAMEORIGIN',
+119 verbose headers   'x-content-type-options': 'nosniff',
+119 verbose headers   'accept-ranges': 'bytes',
+119 verbose headers   'content-type': 'application/json',
+119 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:51 GMT',
+119 verbose headers   'content-length': '743558' }
+120 silly get cb [ 200,
+120 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+120 silly get     server: 'Nexus/2.12.0-01',
+120 silly get     'x-frame-options': 'SAMEORIGIN',
+120 silly get     'x-content-type-options': 'nosniff',
+120 silly get     'accept-ranges': 'bytes',
+120 silly get     'content-type': 'application/json',
+120 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:51 GMT',
+120 silly get     'content-length': '743558' } ]
+121 verbose get saving ionic to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/ionic/.cache.json
+122 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+123 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/npm
+124 verbose headers { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+124 verbose headers   server: 'Nexus/2.12.0-01',
+124 verbose headers   'x-frame-options': 'SAMEORIGIN',
+124 verbose headers   'x-content-type-options': 'nosniff',
+124 verbose headers   'accept-ranges': 'bytes',
+124 verbose headers   'content-type': 'application/json',
+124 verbose headers   'last-modified': 'Fri, 17 Jun 2016 03:59:53 GMT',
+124 verbose headers   'content-length': '5250337' }
+125 silly get cb [ 200,
+125 silly get   { date: 'Fri, 17 Jun 2016 03:59:50 GMT',
+125 silly get     server: 'Nexus/2.12.0-01',
+125 silly get     'x-frame-options': 'SAMEORIGIN',
+125 silly get     'x-content-type-options': 'nosniff',
+125 silly get     'accept-ranges': 'bytes',
+125 silly get     'content-type': 'application/json',
+125 silly get     'last-modified': 'Fri, 17 Jun 2016 03:59:53 GMT',
+125 silly get     'content-length': '5250337' } ]
+126 verbose get saving npm to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/npm/.cache.json
+127 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+128 info outdated updating [ { dep:
+128 info outdated      Node {
+128 info outdated        id: 1,
+128 info outdated        package: [Object],
+128 info outdated        path: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/cordova-plugin-mfp',
+128 info outdated        realpath: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/cordova-plugin-mfp',
+128 info outdated        parent: [Object],
+128 info outdated        isLink: false,
+128 info outdated        children: [Object],
+128 info outdated        error: null,
+128 info outdated        loaded: false,
+128 info outdated        requiredBy: [],
+128 info outdated        requires: [Object],
+128 info outdated        missingDeps: {},
+128 info outdated        missingDevDeps: {},
+128 info outdated        userRequired: true,
+128 info outdated        existing: false },
+128 info outdated     depname: 'cordova-plugin-mfp',
+128 info outdated     current: '8.0.2016032800',
+128 info outdated     wanted: '8.0.2016061308',
+128 info outdated     latest: '8.0.2016061308',
+128 info outdated     req: 'latest',
+128 info outdated     what: 'cordova-plugin-mfp@8.0.2016061308' },
+128 info outdated   { dep:
+128 info outdated      Node {
+128 info outdated        id: 6,
+128 info outdated        package: [Object],
+128 info outdated        path: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/ionic',
+128 info outdated        realpath: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/ionic',
+128 info outdated        parent: [Object],
+128 info outdated        isLink: false,
+128 info outdated        children: [Object],
+128 info outdated        error: null,
+128 info outdated        loaded: false,
+128 info outdated        requiredBy: [],
+128 info outdated        requires: [Object],
+128 info outdated        missingDeps: {},
+128 info outdated        missingDevDeps: {},
+128 info outdated        userRequired: true,
+128 info outdated        existing: false },
+128 info outdated     depname: 'ionic',
+128 info outdated     current: '2.0.0-beta.24',
+128 info outdated     wanted: '2.0.0-beta.30',
+128 info outdated     latest: '1.7.15',
+128 info outdated     req: 'beta',
+128 info outdated     what: 'ionic@2.0.0-beta.30' },
+128 info outdated   { dep:
+128 info outdated      Node {
+128 info outdated        id: 4,
+128 info outdated        package: [Object],
+128 info outdated        path: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/mfpdev-cli',
+128 info outdated        realpath: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/mfpdev-cli',
+128 info outdated        parent: [Object],
+128 info outdated        isLink: false,
+128 info outdated        children: [Object],
+128 info outdated        error: null,
+128 info outdated        loaded: false,
+128 info outdated        requiredBy: [],
+128 info outdated        requires: [Object],
+128 info outdated        missingDeps: {},
+128 info outdated        missingDevDeps: {},
+128 info outdated        userRequired: true,
+128 info outdated        existing: false },
+128 info outdated     depname: 'mfpdev-cli',
+128 info outdated     current: '8.0.2016060217',
+128 info outdated     wanted: '8.0.2016061704',
+128 info outdated     latest: '8.0.2016061704',
+128 info outdated     req: 'latest',
+128 info outdated     what: 'mfpdev-cli@8.0.2016061704' },
+128 info outdated   { dep:
+128 info outdated      Node {
+128 info outdated        id: 8,
+128 info outdated        package: [Object],
+128 info outdated        path: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm',
+128 info outdated        realpath: '/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm',
+128 info outdated        parent: [Object],
+128 info outdated        isLink: false,
+128 info outdated        children: [Object],
+128 info outdated        error: null,
+128 info outdated        loaded: false,
+128 info outdated        requiredBy: [],
+128 info outdated        requires: [Object],
+128 info outdated        missingDeps: {},
+128 info outdated        missingDevDeps: {},
+128 info outdated        userRequired: false,
+128 info outdated        existing: false },
+128 info outdated     depname: 'npm',
+128 info outdated     current: '3.8.3',
+128 info outdated     wanted: '3.10.0',
+128 info outdated     latest: '3.9.6',
+128 info outdated     req: '*',
+128 info outdated     what: 'npm@3.10.0' } ]
+129 silly loadCurrentTree Starting
+130 silly install loadCurrentTree
+131 silly install readGlobalPackageData
+132 silly fetchPackageMetaData cordova-plugin-mfp@8.0.2016061308
+133 silly fetchPackageMetaData ionic@2.0.0-beta.30
+134 silly fetchPackageMetaData mfpdev-cli@8.0.2016061704
+135 silly fetchPackageMetaData npm@3.10.0
+136 silly fetchNamedPackageData cordova-plugin-mfp
+137 silly mapToRegistry name cordova-plugin-mfp
+138 silly mapToRegistry using default registry
+139 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+140 silly mapToRegistry data Result {
+140 silly mapToRegistry   raw: 'cordova-plugin-mfp',
+140 silly mapToRegistry   scope: null,
+140 silly mapToRegistry   name: 'cordova-plugin-mfp',
+140 silly mapToRegistry   rawSpec: '',
+140 silly mapToRegistry   spec: 'latest',
+140 silly mapToRegistry   type: 'tag' }
+141 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+142 silly fetchNamedPackageData ionic
+143 silly mapToRegistry name ionic
+144 silly mapToRegistry using default registry
+145 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+146 silly mapToRegistry data Result {
+146 silly mapToRegistry   raw: 'ionic',
+146 silly mapToRegistry   scope: null,
+146 silly mapToRegistry   name: 'ionic',
+146 silly mapToRegistry   rawSpec: '',
+146 silly mapToRegistry   spec: 'latest',
+146 silly mapToRegistry   type: 'tag' }
+147 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+148 silly fetchNamedPackageData mfpdev-cli
+149 silly mapToRegistry name mfpdev-cli
+150 silly mapToRegistry using default registry
+151 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+152 silly mapToRegistry data Result {
+152 silly mapToRegistry   raw: 'mfpdev-cli',
+152 silly mapToRegistry   scope: null,
+152 silly mapToRegistry   name: 'mfpdev-cli',
+152 silly mapToRegistry   rawSpec: '',
+152 silly mapToRegistry   spec: 'latest',
+152 silly mapToRegistry   type: 'tag' }
+153 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpdev-cli
+154 silly fetchNamedPackageData npm
+155 silly mapToRegistry name npm
+156 silly mapToRegistry using default registry
+157 silly mapToRegistry registry http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/
+158 silly mapToRegistry data Result {
+158 silly mapToRegistry   raw: 'npm',
+158 silly mapToRegistry   scope: null,
+158 silly mapToRegistry   name: 'npm',
+158 silly mapToRegistry   rawSpec: '',
+158 silly mapToRegistry   spec: 'latest',
+158 silly mapToRegistry   type: 'tag' }
+159 silly mapToRegistry uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/npm
+160 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+161 verbose request no auth needed
+162 info attempt registry request try #1 at 07:01:52
+163 verbose lastModified Fri, 17 Jun 2016 03:59:51 GMT
+164 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+165 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+166 verbose request no auth needed
+167 info attempt registry request try #1 at 07:01:52
+168 verbose lastModified Fri, 17 Jun 2016 03:59:50 GMT
+169 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+170 verbose request uri http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpdev-cli
+171 verbose request no auth needed
+172 info attempt registry request try #1 at 07:01:52
+173 verbose lastModified Fri, 17 Jun 2016 03:59:50 GMT
+174 http request GET http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/mfpdev-cli
+175 verbose get http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/npm not expired, no request
+176 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/ionic
+177 verbose headers { date: 'Fri, 17 Jun 2016 04:01:51 GMT',
+177 verbose headers   server: 'Nexus/2.12.0-01',
+177 verbose headers   'x-frame-options': 'SAMEORIGIN',
+177 verbose headers   'x-content-type-options': 'nosniff',
+177 verbose headers   'accept-ranges': 'bytes',
+177 verbose headers   'content-type': 'application/json',
+177 verbose headers   'last-modified': 'Fri, 17 Jun 2016 04:01:51 GMT',
+177 verbose headers   'content-length': '743558' }
+178 silly get cb [ 200,
+178 silly get   { date: 'Fri, 17 Jun 2016 04:01:51 GMT',
+178 silly get     server: 'Nexus/2.12.0-01',
+178 silly get     'x-frame-options': 'SAMEORIGIN',
+178 silly get     'x-content-type-options': 'nosniff',
+178 silly get     'accept-ranges': 'bytes',
+178 silly get     'content-type': 'application/json',
+178 silly get     'last-modified': 'Fri, 17 Jun 2016 04:01:51 GMT',
+178 silly get     'content-length': '743558' } ]
+179 verbose get saving ionic to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/ionic/.cache.json
+180 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+181 http 200 http://visustar.francelab.fr.ibm.com:8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp
+182 verbose headers { date: 'Fri, 17 Jun 2016 04:01:51 GMT',
+182 verbose headers   server: 'Nexus/2.12.0-01',
+182 verbose headers   'x-frame-options': 'SAMEORIGIN',
+182 verbose headers   'x-content-type-options': 'nosniff',
+182 verbose headers   'accept-ranges': 'bytes',
+182 verbose headers   'content-type': 'application/json',
+182 verbose headers   'last-modified': 'Fri, 17 Jun 2016 04:01:51 GMT',
+182 verbose headers   'content-length': '1078432' }
+183 silly get cb [ 200,
+183 silly get   { date: 'Fri, 17 Jun 2016 04:01:51 GMT',
+183 silly get     server: 'Nexus/2.12.0-01',
+183 silly get     'x-frame-options': 'SAMEORIGIN',
+183 silly get     'x-content-type-options': 'nosniff',
+183 silly get     'accept-ranges': 'bytes',
+183 silly get     'content-type': 'application/json',
+183 silly get     'last-modified': 'Fri, 17 Jun 2016 04:01:51 GMT',
+183 silly get     'content-length': '1078432' } ]
+184 verbose get saving cordova-plugin-mfp to /Users/idanadar/.npm/visustar.francelab.fr.ibm.com_8081/nexus/content/groups/mobile-npm-all/cordova-plugin-mfp/.cache.json
+185 verbose correctMkdir /Users/idanadar/.npm correctMkdir not in flight; initializing
+186 verbose stack TypeError: Invalid Version: 7.1.000201509241234
+186 verbose stack     at new SemVer (/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/node_modules/semver/semver.js:293:11)
+186 verbose stack     at SemVer.compare (/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/node_modules/semver/semver.js:342:13)
+186 verbose stack     at compare (/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/node_modules/semver/semver.js:566:31)
+186 verbose stack     at rcompare (/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/node_modules/semver/semver.js:576:10)
+186 verbose stack     at Array.sort (native)
+186 verbose stack     at pickVersionFromRegistryDocument (/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/lib/fetch-package-metadata.js:121:48)
+186 verbose stack     at /Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+186 verbose stack     at /Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/lib/utils/pulse-till-done.js:19:8
+186 verbose stack     at saved (/Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/lib/cache/caching-client.js:168:7)
+186 verbose stack     at /Users/idanadar/.nvm/versions/node/v5.10.1/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+187 verbose cwd /Users/idanadar/Documents/MobileFirst/GIT/MFPSamples/Adapters/JavaScriptSQL
+188 error Darwin 15.5.0
+189 error argv "/Users/idanadar/.nvm/versions/node/v5.10.1/bin/node" "/Users/idanadar/.nvm/versions/node/v5.10.1/bin/npm" "update" "-g"
+190 error node v5.10.1
+191 error npm  v3.8.3
+192 error Invalid Version: 7.1.000201509241234
+193 error If you need help, you may report this error at:
+193 error     <https://github.com/npm/npm/issues>
+194 verbose exit [ 1, true ]
